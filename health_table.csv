@@ -1,0 +1,9 @@
+node,healthy
+Web/mobile,True
+Akamani/CDN,True
+Gateway,False
+UI sdk,True
+Authentication,True
+Internal Services,True
+External Service,False
+DB check for credentials,True

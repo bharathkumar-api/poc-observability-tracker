@@ -1,0 +1,92 @@
+{
+  "name": "Testing",
+  "version": "1",
+  "items": [
+    {
+      "type": "folder",
+      "name": "poc",
+      "filename": "poc",
+      "root": {
+        "meta": {
+          "name": "poc"
+        }
+      }
+    },
+    {
+      "type": "http",
+      "name": "Visualization_test",
+      "filename": "Visualization_test.bru",
+      "seq": 1,
+      "request": {
+        "url": "http://127.0.0.1:8000/api/healthcheck",
+        "method": "POST",
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "application/json",
+            "enabled": true
+          }
+        ],
+        "params": [],
+        "body": {
+          "mode": "json",
+          "json": "{\n  \"nodes\": [\n    \"Web/mobile\",\n    \"Akamani/CDN\",\n    \"Gateway\",\n    \"UI sdk\",\n    \"Authentication\",\n    \"Internal Services\",\n    \"External Service\",\n    \"DB check for credentials\"\n  ],\n  \"edges\": [\n    { \"from\": \"Web/mobile\", \"to\": \"Akamani/CDN\" },\n    { \"from\": \"Akamani/CDN\", \"to\": \"Gateway\" },\n    { \"from\": \"Gateway\", \"to\": \"UI sdk\" },\n    { \"from\": \"Gateway\", \"to\": \"Authentication\" },\n    { \"from\": \"Authentication\", \"to\": \"Internal Services\" },\n    { \"from\": \"Authentication\", \"to\": \"External Service\" },\n    { \"from\": \"Internal Services\", \"to\": \"DB check for credentials\" },\n    { \"from\": \"External Service\", \"to\": \"DB check for credentials\" }\n  ]\n}\n",
+          "formUrlEncoded": [],
+          "multipartForm": [],
+          "file": []
+        },
+        "script": {},
+        "vars": {},
+        "assertions": [],
+        "tests": "",
+        "docs": "",
+        "auth": {
+          "mode": "inherit"
+        }
+      }
+    },
+    {
+      "type": "http",
+      "name": "testing",
+      "filename": "testing.bru",
+      "seq": 2,
+      "request": {
+        "url": "http://127.0.0.1:8000/api/healthcheck",
+        "method": "POST",
+        "headers": [
+          {
+            "name": "Content-Type",
+            "value": "application/json",
+            "enabled": true
+          }
+        ],
+        "params": [],
+        "body": {
+          "mode": "json",
+          "json": "{\"nodes\":[\"Web/mobile\"],\"edges\":[]}",
+          "formUrlEncoded": [],
+          "multipartForm": [],
+          "file": []
+        },
+        "script": {},
+        "vars": {},
+        "assertions": [],
+        "tests": "",
+        "docs": "",
+        "auth": {
+          "mode": "inherit"
+        }
+      }
+    }
+  ],
+  "environments": [],
+  "brunoConfig": {
+    "version": "1",
+    "name": "Testing",
+    "type": "collection",
+    "ignore": [
+      "node_modules",
+      ".git"
+    ]
+  }
+}
